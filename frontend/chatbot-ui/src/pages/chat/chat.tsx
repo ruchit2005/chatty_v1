@@ -23,7 +23,12 @@ export function Chat() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/chat", {
+      const backendUrl = import.meta.env.PROD
+  ? "https://chatty-v1-n111.onrender.com"
+  : "http://localhost:3000/chat";
+
+const res = await fetch(backendUrl, {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: messageText }),

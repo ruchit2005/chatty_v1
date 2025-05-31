@@ -17,8 +17,11 @@ class Message(BaseModel):
 
 # %%
 ## Get the MystralAI model into my project
+@app.get("/")
+def home():
+    return {"message": "Backend is working"}
 
-@app.post("/")
+@app.post("/chat")
 async def chat_endpoint(message: Message):
     prompt = message.message
     from huggingface_hub import InferenceClient

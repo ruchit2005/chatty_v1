@@ -5,13 +5,13 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy requirements.txt
-COPY requirements.txt .
+COPY backend/requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy entire backend codebase
-COPY . .
+COPY backend/ .
 
 # Expose FastAPI port
 EXPOSE 8000

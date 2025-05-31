@@ -12,7 +12,8 @@ app.post('/chat', async (req, res) => {
   try {
     const { message } = req.body;
 
-    const pythonResponse = await axios.post('http://localhost:8000/chat', { message });
+    const pythonResponse = await axios.post('https://chatty-py.onrender.com/chat', { message });
+
 
     res.json({ response: pythonResponse.data.response });
   } catch (error) {

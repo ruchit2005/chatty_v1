@@ -10,4 +10,4 @@ COPY backend/ .
 
 EXPOSE 8000
 
-CMD ["uvicorn", "model.chatty_heart:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "backend.model.chatty_heart:app", "--host", "0.0.0.0", "--port", "8000"]

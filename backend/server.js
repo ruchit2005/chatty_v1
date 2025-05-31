@@ -12,7 +12,8 @@ app.post('/chat', async (req, res) => {
   try {
     const { message } = req.body;
 
-    const pythonResponse = await axios.post('chatty-backend-production-4b11.up.railway.app/chat', { message });
+    const pythonResponse = await axios.post('https://chatty-backend-production-4b11.up.railway.app/chat', { message });
+
 
 
     res.json({ response: pythonResponse.data.response });

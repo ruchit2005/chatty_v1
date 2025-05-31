@@ -12,7 +12,7 @@ app.post('/chat', async (req, res) => {
   try {
     const { message } = req.body;
 
-    const pythonResponse = await axios.post('https://chatty-py.onrender.com/chat', { message });
+    const pythonResponse = await axios.post('chatty-backend-production-4b11.up.railway.app', { message });
 
 
     res.json({ response: pythonResponse.data.response });

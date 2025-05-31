@@ -24,7 +24,7 @@ export function Chat() {
 
     try {
       const backendUrl = import.meta.env.PROD
-  ? "https://chatty-js.onrender.com"
+  ? "https://chatty-js.onrender.com/chat"
   : "http://localhost:3000/chat";
 
 const res = await fetch(backendUrl, {

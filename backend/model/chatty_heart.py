@@ -8,12 +8,24 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 api_key = os.getenv("HUGGINGFACE_API_KEY")
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 
 
 # %%
 app = FastAPI()
 class Message(BaseModel):
     message: str
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://chatty-v1-1.onrender.com"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # %%
 ## Get the MystralAI model into my project

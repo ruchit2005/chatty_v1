@@ -2,6 +2,8 @@
 
 Welcome to **Chatty_v1** — my very first self-made AI/ML chatbot project! This project is a learning journey to understand how various cutting-edge technologies and components come together to create a smooth, interactive chatbot experience.
 
+Deployed link: [Chatty](https://chatty-v1-1.onrender.com)
+
 ---
 
 ## ✨ Features
@@ -39,9 +41,15 @@ Welcome to **Chatty_v1** — my very first self-made AI/ML chatbot project! This
 
 ## 🔗 Access the Chatbot
 
-- **Frontend UI:** [http://localhost:5173](http://localhost:5173) (default Vite port)  
-- **Backend FastAPI:** [http://localhost:8000/docs](http://localhost:8000/docs) (API docs)  
-- **Node proxy:** listens on port 3000  
+- **Frontend UI:**
+  Locally: [http://localhost:5173](http://localhost:5173) (default Vite port)
+  Deployed: [https://chatty-v1-1.onrender.com](https://chatty-v1-1.onrender.com)
+- **Backend FastAPI:**
+  Locally: [http://localhost:8000/docs](http://localhost:8000/docs) (API docs)
+  Deployed: [https://chatty-py.onrender.com](https://chatty-py.onrender.com)
+- **Node proxy:**
+  Locally: listens on port 3000
+  Deployed:[https://chatty-js.onrender.com](https://chatty-js.onrender.com)
 - **Original Frontend UI source:** [https://github.com/ChristophHandschuh/chatbot-ui](https://github.com/ChristophHandschuh/chatbot-ui)
 
 ---

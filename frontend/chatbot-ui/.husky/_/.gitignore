@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But NOT these
+!.gitignore
+!frontend/
+!frontend/chatbot-ui/
+!frontend/chatbot-ui/**

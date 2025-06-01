@@ -11,7 +11,7 @@ api_key = os.getenv("HUGGINGFACE_API_KEY")
 from fastapi.middleware.cors import CORSMiddleware
 
 import uvicorn
-port = int(os.environ.get("PORT", 8000))
+port = int(os.environ.get("PORT", 8080))
 from huggingface_hub import InferenceClient
 
 client = InferenceClient(

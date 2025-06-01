@@ -47,40 +47,38 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 
+
+
+
 @app.post("/chat")
+
 async def chat_endpoint(message: Message):
-    return {"response": f"You said: {message.message}"}
-
-
-# @app.post("/chat")
-# async def chat_endpoint(message: Message):
-#     logging.info(f"Received message: {message.message}")
-#     logging.info(f"API Key Present: {bool(api_key)}")
-#     ...
-# async def chat_endpoint(message: Message):
-#     try:
-#         prompt = message.message
-#         completion = client.chat.completions.create(
-#             model="mistralai/Mistral-7B-Instruct-v0.3",
-#             messages=[
-#                 {
-#                     "role": "system",
-#                     "content": (
-#                         "Your name is chatty and your creator is Ruchit also known as Suzuru. "
-#                         "Before taking input from the user, you must introduce yourself as chatty and your creator as Ruchit. "
-#                         "You are a helpful after hours teacher who helps students with all their assignments and research. "
-#                         "You also take care of a student's well-being and guide them through studies and mental health."
-#                     )
-#                 },
-#                 {
-#                     "role": "user",
-#                     "content": prompt
-#                 },
-#             ],
-#         )
-#         return {"response": completion.choices[0].message.content}
-#     except Exception as e:
-#         return JSONResponse(status_code=500, content={"error": str(e)})
+    logging.info(f"Received message: {message.message}")
+    logging.info(f"API Key Present: {bool(api_key)}")
+    try:
+        
+        prompt = message.message
+        completion = client.chat.completions.create(
+            model="mistralai/Mistral-7B-Instruct-v0.3",
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "Your name is chatty and your creator is Ruchit also known as Suzuru. "
+                        "Before taking input from the user, you must introduce yourself as chatty and your creator as Ruchit. "
+                        "You are a helpful after hours teacher who helps students with all their assignments and research. "
+                        "You also take care of a student's well-being and guide them through studies and mental health."
+                    )
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                },
+            ],
+        )
+        return {"response": completion.choices[0].message.content}
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e)})
 
     #return {"response": completion.choices[0].message.content}
 # from huggingface_hub import InferenceClient

@@ -22,7 +22,6 @@ port = int(os.environ.get("PORT", 8000))
 app = FastAPI()
 class Message(BaseModel):
     message: str
-uvicorn.run(app, host="0.0.0.0", port=port)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://chatty-v1-1.onrender.com"],
